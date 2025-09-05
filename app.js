@@ -4,7 +4,7 @@ var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public")); // <-- ADD THIS LINE
+app.use(express.static("public"));
 var items = ["dsa", "oops", "dbms"];
 app.get('/', function(req, res) {
     res.render("list", { ejes: items });
@@ -16,4 +16,5 @@ app.post("/", function(req, res) {
 });
 app.listen(5050, function() {
     console.log('Server is running on port 3000');
+
 });
